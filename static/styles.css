@@ -1,8 +1,14 @@
+/* Styles de base pour le corps et la structure */
+html, body {
+    height: 100%; /* Assure que le body prend toute la hauteur */
+    margin: 0; /* Enlève les marges par défaut */
+    padding: 0; /* Enlève les paddings par défaut */
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    display: flex; /* Utilise flexbox pour la mise en page */
+    flex-direction: column; /* Aligne les éléments verticalement */
 }
 
 header {
@@ -12,27 +18,33 @@ header {
     text-align: center;
 }
 
+/* Section principale du site */
 main {
+    flex: 1; /* Permet au main de remplir l'espace restant */
     padding: 20px;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Permet le défilement si nécessaire */
 }
 
+/* Styles pour les étiquettes */
 label {
     display: block;
     margin-top: 10px;
 }
 
-input, textarea {
-    width: 100%;
+/* Champs d'entrée, textarea, select, et le bouton : uniformiser la largeur */
+input, textarea, select, button {
+    width: 100%; /* Prendre toute la largeur du parent */
     padding: 10px;
     margin-top: 5px;
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
 }
 
+/* Styles spécifiques pour le bouton de soumission */
 button {
-    display: block;
     margin-top: 15px;
     padding: 10px;
     background-color: #333;
@@ -45,12 +57,50 @@ button:hover {
     background-color: #555;
 }
 
+/* Styles du pied de page */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+}
+
+/* Rendre le contenu adaptable à des écrans plus petits (responsive) */
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+        max-width: 100%; /* S'adapte à la largeur de l'écran */
+    }
+
+    header {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Pour les écrans plus grands (tablettes et ordinateurs) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    main {
+        max-width: 80%; /* S'ajuste à l'écran mais avec des marges */
+    }
+
+    button {
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
