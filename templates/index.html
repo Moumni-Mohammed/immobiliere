@@ -18,10 +18,21 @@
                 <label for="client">Nom du client:</label>
                 <input type="text" id="client" name="client" required>
 
+                <label for="produit">Produit:</label>
+                <select id="produit" name="produit" required>
+                    <option value="">--Sélectionnez un produit--</option>
+                    <option value="Produit A">Produit A</option>
+                    <option value="Produit B">Produit B</option>
+                    <option value="Produit C">Produit C</option>
+                </select>
+
+                <label for="quantite">Quantité:</label>
+                <input type="number" id="quantite" name="quantite" required min="1" value="1">
+                
                 <label for="montant">Montant (en DH):</label>
                 <input type="number" id="montant" name="montant" required>
 
-                <label for="description">Description du service:</label>
+                <label for="description">Commentaire:</label>
                 <textarea id="description" name="description" required></textarea>
 
                 <button type="submit">Générer la facture en PDF</button>
